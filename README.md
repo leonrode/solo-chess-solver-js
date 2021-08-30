@@ -9,7 +9,7 @@ You will then see a list of moves that will solve the puzzle.
 
 ## Metrics
 
-This algorithm can solve most Level 10 problems in under a second, with some being solved in less than 100ms. Others can take a while depending on the path of the recursive tree.
+This algorithm can solve most Level 10 problems in under a second, with some being solved in less than 100ms. Others can take a while. Optimization suggestions welcome!
 
 ## Suggestions?
 
