@@ -569,7 +569,7 @@
     const move = `${files[x]}${y + 1} to ${files[x1]}${y1 + 1}`;
     return move;
   }
-  console.log(finalMoves);
+
   for (const move of finalMoves) {
     const string = getPieceAt(move.from.x, move.from.y, move.to.x, move.to.y);
 
