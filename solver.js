@@ -503,10 +503,10 @@
 
   for (const piece of pieces) {
     const url = piece.style["background-image"];
-    const pieceString = piece.classList[1];
+    const pieceString = Array.from(piece.classList).filter(function (e) {return e.length === 2})[0];
 
-    const positionString = piece.classList[2].split("-")[1];
-		
+    const positionString = Array.from(piece.classList).filter(function (e) {return e.indexOf("-") !== -1})[0].split("-")[1];
+
     const m = {
       wp: Pawn,
       wk: King,
