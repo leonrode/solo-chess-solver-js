@@ -496,18 +496,18 @@
       return attacks;
     }
   }
-  const piecesContainer = document.querySelector(".pieces");
-  const pieces = piecesContainer.childNodes;
+  const piecesContainer = document.querySelector(".board");
+  const pieces = piecesContainer.querySelectorAll(".piece");
 
   const board = new Board();
 
   for (const piece of pieces) {
     const url = piece.style["background-image"];
-    const pieceString = url.substr(64, 2);
+    const pieceString = piece.classList[1];
 
-    const positionString = piece.classList[1].split("-")[1];
-
-    const map = {
+    const positionString = piece.classList[2].split("-")[1];
+		
+    const m = {
       wp: Pawn,
       wk: King,
       wr: Rook,
@@ -516,9 +516,10 @@
       wn: Knight,
     };
 
-    const x = parseInt(positionString.substr(0, 2)) - 1;
-    const y = parseInt(positionString.substr(2, 2)) - 1;
-    const mapped = map[pieceString];
+    const x = parseInt(positionString[0]) - 1;
+    const y = parseInt(positionString[1]) - 1;
+    const mapped = m[pieceString];
+
     const instance = new mapped();
     instance.x = x;
     instance.y = y;
